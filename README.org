@@ -4,7 +4,7 @@ This repository is the house of all of my notes on Lisp. This repository will
 predominately be about Common Lisp, but I may include some notes for other Lisp
 dialects as I learn various things.
 
-Everything is an expression
+Everything is an expression in lisp.
 
 * Syntax
   While most languages use [[https://notes.ethancpost.com/infix_notation.html][infix notation]], lisp uses [[https://notes.ethancpost.com/prefix_notation.html][prefix notation]]. This means
@@ -22,4 +22,25 @@ Everything is an expression
 
   The first thing you may notice when looking at this is we only had to call the
   ~+~ operator once in the lisp example. That is because lisp is a
-  [[https://notes.ethancpost.com/functional_programming.html][functional programming]] language.
+  [[https://notes.ethancpost.com/functional_programming.html][functional programming]] language and the ~+~ operator is a function that
+  accepts two or more inputs.
+
+  This can also be seen with how functions are created in lisp as opposed to
+  another language like javascript:
+  #+begin_src javascript
+    function hello(name) {
+      // documentation string
+      console.log("Hello ", name);
+    }
+
+    hello("you");
+  #+end_src
+
+  lisp:
+  #+begin_src lisp
+    (defun hello (name)
+      "documentation string."
+      (format t "Hello -a" name))
+
+    (hello "you")
+  #+end_src
